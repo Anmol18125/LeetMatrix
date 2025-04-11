@@ -46,7 +46,7 @@ Users can quickly track problem-solving progress.
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/leetmatrix.git
+git clone https://github.com/anmol18125/leetmatrix.git
 cd leetmatrix
 npm install / pip install -r requirements.txt
 npm start / python app.py
