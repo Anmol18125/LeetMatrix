@@ -1,0 +1,400 @@
+*{
+	margin: 0;
+	padding: 0;
+
+}
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+	position: sticky;
+	top: 0;
+	   box-shadow: 0px 5px 15px rgba(0, 0,0, 0.067);
+	   border-radius: 20px;
+	   overflow: hidden;
+	   margin-bottom: 10px;
+
+}
+.navbar
+{
+	width: 100%;
+   
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 20px;
+	
+	background-color: rgb(35, 33, 33);
+
+
+   
+}
+.logo img{
+	width:49px;
+	height: 42px;
+   padding: 10px 20px;
+
+}
+.links{
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.links li{
+	list-style: none;
+	padding: 0px 20px;
+	position: relative;
+}
+
+.links li a{
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	color: #000;
+	transition: 0.3s ease;
+}
+
+.links li a{
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+	transition: 0.3s ease;
+	text-decoration: none;
+}
+
+
+
+.links li a:hover,
+.links li a.active{
+	color:greenyellow;
+	
+}
+.links li a.active::after,
+.links li a:hover::after
+{
+	content: "";
+	width: 30%;
+	height:2px ;
+	
+	background: white;
+	position: absolute;
+	bottom: -4px;
+	left: 20px;
+}
+@media (min-width: 360px) {
+	.navbar ul li{
+		display: flex;
+	}
+} 
+.imageContainer{
+  
+  padding: 0;
+  box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+
+
+
+
+
+
+h1.cart-icon {
+	margin: 
+0;
+padding: 0;
+}
+h1.cart-icon i {
+cursor: pointer;
+}
+h1.cart-icon:before{
+content: attr(data-count);
+color: white;
+position: absolute;
+right: 16px;
+font-size: 15px;
+text-align: center;
+top: -12px;
+width: 20px;
+height: 20px;
+background: red;
+border-radius: 50%;
+opacity: 0;
+}
+h1.cart-icon.zero:before{
+opacity: 1;
+}
+
+	section{
+	    margin: 100px auto;
+	    width: 90%;
+	    height: 400px;
+	    display: flex;
+	    justify-content: space-around;
+	    height: max-content;
+	    flex-wrap: wrap			;overflow: hidden;
+
+		}
+		
+
+		h3{
+			text-align:  center;
+		}
+		section div{
+			width: 22%;
+			height: 93%;
+			background:#f5f5f5;
+			padding: 1%;
+			position: relative;			overflow: hidden;
+
+		}
+		img{
+			width: 300px;
+			height: 186px;
+            background-size: cover;
+			overflow: hidden;
+		}
+        button a{
+            text-decoration: none;
+            color: #fafafa;
+            padding: 2px 2px;
+            margin-top: 20px;
+            width: auto;
+        }
+
+		p{
+			margin: 5px;
+		}
+		h6{
+		    width: 50px;
+		    padding: 5px;
+		    margin: 10px;
+		    font-size: 15px;
+		}
+		button{
+			padding: 5px;
+		    background: red;
+		    border: none;
+		    outline: none;
+		    font-weight: bold;
+		    color: #fafafa;
+		    cursor: pointer;
+		}
+		section div span{
+			position: absolute;
+		    top: 14px;
+		    left: 13px;
+		    background: red;
+		    width: 300px;
+		    height: 186px;
+		    display: none;
+		}
+		section div span img{
+			width: 100%;
+			height: 100%;
+		}
+		
+		@keyframes first{
+			to{
+				width: 30px;
+			    height: 20px;
+			    left: 1290px;
+			    top: -70px;
+			}
+		}
+		@keyframes second{
+			to{
+				width: 30px;
+			    height: 20px;
+			    left: 948px;
+			    top: -70px;
+			}
+		}
+		@keyframes third{
+			to{
+				width: 30px;
+			    height: 20px;
+			    left: 606px;
+			    top: -70px;
+			}
+		}
+		@keyframes four{
+			to{
+				width: 30px;
+			    height: 20px;
+			    left: 265px;
+			    top: -70px;
+			}
+		}
+
+
+		
+		.select{
+			width: 60%;
+			height: 580px;
+			padding: 5%;
+			background: #222;
+			position: absolute;
+			top: -1000px;
+			left: 20%;
+			transition: 0.5s;
+			overflow-y: auto;
+			margin: auto;
+		}
+		.select.display{
+			top: 10px;
+		}
+		.select div{
+			width: 100%;
+			height: 200px;
+			display: flex;
+			padding: 5px;
+			border: 1px solid white;
+			position: relative;
+			margin: 5px auto;
+		}
+		.select div img{
+			width: 300px;
+			height: 100%;
+		}
+		.select div p{
+			padding: 35px;
+			color: white;
+		}
+		.select div h6,
+		.select div button{
+			position: absolute;
+			left: 45%;
+			top: 50%;
+			color: white;
+		}
+		.select div button{
+			left: 60%;
+			top: 55%;
+		}
+		.select div span{
+			display: none;
+		}
+       
+
+	
+		  
+		  #page-header{
+			background-image: url('image/XYZLOGO.png');
+			width: 100%;
+		   height: 40vh;
+			  border-radius: 20px;
+			  background-size: cover;
+		  display: flex;
+		  justify-content: center;
+		  text-align: center;
+		  flex-direction: column;
+		  padding: 14px;
+		  }
+		  #page-header h2,
+		  #page-header p{
+			color: #fff;
+		  }
+
+		  
+
+
+		  .footer0 h1{
+			text-align: center;
+			}
+			  footer {
+				display: flex;
+				flex-direction: column;
+				background-color: lightslategrey;
+				align-items: center;
+				color: white;
+			  }
+			  
+			  .footer1 {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				color: white;
+				margin-top: 15px;
+			  }
+			  .social-media {
+				display: flex;
+				justify-content: center;
+				color: white;
+				flex-wrap: wrap;
+			  }
+			  .social-media a {
+				color: white;
+				margin: 20px;
+				border-radius: 5px;
+				margin-top: 10px;
+				color: white;
+			  }
+			  .social-media a ion-icon {
+				color: white;
+				background-color: lightslategrey;
+			  }
+			  .social-media a:hover ion-icon {
+				color: red;
+				transform: translateY(5px);
+			  }
+			  .footer2 {
+				display: flex;
+				width: 100%;
+				justify-content: space-evenly;
+				align-items: center;
+				text-decoration: none;
+				flex-wrap: wrap;
+			  }
+			  .footer0 {
+				font-weight: 1200;
+				transition-duration: 1s;
+			  }
+			  .footer0:hover {
+				color: rgb(243, 168, 7);
+			  }
+			  .footer2 .heading {
+				font-weight: 900;
+				font-size: 18px;
+			  }
+			  .footer3 {
+				margin-top: 60px;
+				margin-bottom: 20px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			  }
+			  .footer2 .heading:hover {
+				color: rgb(243, 168, 7);
+			  }
+			  .footer2 .div:hover {
+				transform: scale(1.05);
+			  }
+			  .footer3 h4 {
+				margin: 0 10px;
+			  }
+			  .footer2 div {
+				margin: 10px;
+			  }
+			  .menu {
+				visibility: hidden;
+			  }
+			  .heading1 .ham:active {
+				color: red;
+			  }
+			  .items {
+				overflow: hidden;
+			  }
+			  .ham,
+			  .close {
+				cursor: pointer;
+			  }
+		
+		

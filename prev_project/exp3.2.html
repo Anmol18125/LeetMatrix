@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Google Maps and Charts</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANpkl9BrqjetJMkaDthPQriY6Y9PyhL6k"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    #map, .chart-box {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+
+    .charts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .chart-box {
+      flex: 1 1 32%;
+      min-width: 300px;
+      height: 400px;
+    }
+
+    @media (max-width: 768px) {
+      .charts {
+        flex-direction: column;
+      }
+
+      .chart-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Interactive Google Maps and Charts</h2>
+  <div class="container">
+    <div id="map"></div>
+    <div class="charts">
+      <div id="bar_chart" class="chart-box"></div>
+      <div id="pie_chart" class="chart-box"></div>
+      <div id="donut_chart" class="chart-box"></div>
+    </div>
+  </div>
+
+  <script>
+    let map;
+    let markers = [];
+    let infoWindow;
+
+    const cityLocations = {
+      'Delhi': { lat: 28.6139, lng: 77.2090 },
+      'Mumbai': { lat: 19.0760, lng: 72.8777 },
+      'Bengaluru': { lat: 12.9716, lng: 77.5946 },
+      'Kolkata': { lat: 22.5726, lng: 88.3639 }
+    };
+
+    const cityData = [
+      ['City', 'Population'],
+      ['Delhi', 18980000],
+      ['Mumbai', 20410000],
+      ['Bengaluru', 12700000],
+      ['Kolkata', 14900000],
+    ];
+
+    function getPopulation(cityName) {
+      const row = cityData.find(row => row[0] === cityName);
+      return row ? row[1].toLocaleString() : 'N/A';
+    }
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: { lat: 22.9734, lng: 78.6569 },
+        mapTypeId: 'roadmap'
+      });
+
+      infoWindow = new google.maps.InfoWindow();
+
+      for (const city in cityLocations) {
+        const marker = new google.maps.Marker({
+          position: cityLocations[city],
+          map: map,
+          title: city,
+          animation: google.maps.Animation.DROP
+        });
+
+        marker.addListener('click', () => {
+          map.setZoom(10);
+          map.setCenter(marker.getPosition());
+          infoWindow.setContent(`<strong>${city}</strong><br>Population: ${getPopulation(city)}`);
+          infoWindow.open(map, marker);
+        });
+
+        markers.push(marker);
+      }
+    }
+
+    function drawAllCharts() {
+      google.charts.load('current', { packages: ['corechart'] });
+      google.charts.setOnLoadCallback(() => {
+        const data = google.visualization.arrayToDataTable(cityData);
+
+        drawBarChart(data);
+        drawPieChart(data);
+        drawDonutChart(data);
+      });
+    }
+
+    function drawBarChart(data) {
+      const options = {
+        title: 'Population (Bar Chart)',
+        legend: { position: 'none' },
+        bars: 'horizontal',
+        height: 400,
+        chartArea: { width: '70%' },
+        colors: ['#4285F4']
+      };
+
+      const chart = new google.visualization.BarChart(document.getElementById('bar_chart'));
+      chart.draw(data, options);
+
+      addChartSelection(chart, data);
+    }
+
+    function drawPieChart(data) {
+      const options = {
+        title: 'Population Distribution (Pie Chart)',
+        height: 400
+      };
+
+      const chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
+      chart.draw(data, options);
+
+      addChartSelection(chart, data);
+    }
+
+    function drawDonutChart(data) {
+      const options = {
+        title: 'Population Distribution (Donut Chart)',
+        pieHole: 0.4,
+        height: 400
+      };
+
+      const chart = new google.visualization.PieChart(document.getElementById('donut_chart'));
+      chart.draw(data, options);
+
+      addChartSelection(chart, data);
+    }
+
+    function addChartSelection(chart, data) {
+      google.visualization.events.addListener(chart, 'select', () => {
+        const selection = chart.getSelection();
+        if (selection.length > 0) {
+          const selectedCity = data.getValue(selection[0].row, 0);
+          const coords = cityLocations[selectedCity];
+          map.panTo(coords);
+          map.setZoom(10);
+          infoWindow.setContent(`<strong>${selectedCity}</strong><br>Population: ${getPopulation(selectedCity)}`);
+          infoWindow.setPosition(coords);
+          infoWindow.open(map);
+        }
+      });
+    }
+
+    window.onload = function () {
+      initMap();
+      drawAllCharts();
+    };
+  </script>
+</body>
+</html>

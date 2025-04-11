@@ -1,0 +1,17 @@
+.Container{
+  /* display: flex;
+  /* width: auto;
+  height: auto; 
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-self: center;*/
+  align-items: center; 
+  
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  /* background-color: red; */
+}

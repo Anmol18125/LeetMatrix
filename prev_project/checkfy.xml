@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="checkfy.xsl"?>
+
+<students>
+    <student>
+        <id>101</id>
+        <name>John Doe</name>
+        <department>Computer Science</department>
+        <marks>
+            <subject name="Math">85</subject>
+            <subject name="Physics">78</subject>
+            <subject name="Chemistry">92</subject>
+        </marks>
+    </student>
+</students>

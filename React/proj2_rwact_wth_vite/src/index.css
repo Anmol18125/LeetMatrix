@@ -1,0 +1,20 @@
+*{
+
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  
+  display: flex;background-color: #242424;
+ 
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh; 
+  align-items: center;
+  justify-content: center;
+}
+
+

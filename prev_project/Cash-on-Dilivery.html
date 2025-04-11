@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="Payment.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h3>BILLING ADDRESS</h3>
+            <form action="#">
+                Full name
+                <input type="text" name="" placeholder="Enter Name" required>
+                Email
+                <input type="Email" name=" " placeholder="Enter Eamil" required>
+                Address
+                <input type="text" placeholder="Enter Address" required>
+                City
+                <input type="text" placeholder="Enter City" required>
+
+                <div ><div id="zip">
+                    <label>
+                        State
+                        
+                        <select >
+                            <option >
+                               Choose State... 
+                            </option>
+                            <option >Uttar Pradesh</option>
+                            <option>Punjab</option>
+                            <option>Chandigarh</option>
+                            <option>Bihar</option>
+                        </select>
+                    </label>
+                    <label>
+                        Zip Code<input type="number" placeholder="Zip Code">
+                    </label>
+                </div>
+            </form>
+          <a href="paymentGateway.html">  For Card Payment</a>
+        </div>
+        <div class="right">
+Total
+
+<input type="submit" value="Proceed To CheckOut">
+
+        </div>
+     </div>
+</body>
+</html>

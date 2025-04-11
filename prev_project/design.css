@@ -1,0 +1,99 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #2E1B50;
+  }
+ 
+  .stru {
+    text-align: center;
+    box-shadow: white;
+}
+
+
+.base {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-left: 90px;
+    margin-right:90px ;
+    margin-top: 80px;
+
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;  margin-left: 20px;
+    color: #fff; /* Dark text color */
+}
+
+.text-overlay h2 {
+    margin: 0;
+    font-size: 36px;
+    text-align: left;
+
+}
+
+.text-overlay h4 {
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: left;
+    align-items: left;
+    align-self: left;
+}
+
+.buy1 {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blueviolet; /* Blue color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy1:hover {
+    background-color: #2980b9; /* Darker blue color on hover */
+}
+.first {
+    width: 100%;
+    background-color: #2980b9;
+}
+.net{
+    align-self: center;
+}
+.net img{
+    align-items: center;
+}
+
+.hgirl {
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    align-self: right;
+}
+
+.second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.second img {
+    margin: 0 10px;
+}
+
+
+.third{
+     align-self: center;
+}
+

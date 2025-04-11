@@ -1,0 +1,62 @@
+/* /* body
+{
+    background-image: url("image\ 2.jpg");
+    background-size: cover;
+    
+background-attachment: fixed;
+}
+.box{
+    width: 800px;
+    height: 380px;
+    margin: 50px auto;
+   color: #ff0;
+    border-radius: 20px;
+    border: 2px dashed red;
+    padding: 40px;
+    background-image: url("image\ 3.jpg"),linear-gradient(yellow,blue); 
+    background-size: cover;
+    background-blend-mode: multiply;
+      /* background-origin: content-box; 
+    /* background-repeat: no-repeat; 
+    /* background-clip: padding-box; 
+     overflow: auto;
+/* background-attachment: local; 
+    /* background-image: radial-gradient(ellipse at top,green ,transparent),radial-gradient(ellipse at bottom ,brown,transparent );  */
+   /* background-image: ; 
+ }
+.box p{
+  
+    margin: 20px 40px;
+    float: left;
+    text-shadow: 2px 2px 2px;/* background-color: blue;  
+}  */
+/* *
+{
+
+}
+.Container
+{
+  margin: auto;
+width: 900px;
+border: 3px solid purple;
+}
+.item
+{
+  padding: 12px 3px;
+border: 2px dashed lightcoral;
+background-color: lightblue;
+margin: 12px 3px;
+}
+#fruit
+{
+float: left;
+width: 220px;
+overflow: hidden;
+}
+#Computer{
+
+}#CSE{
+
+} */ 
+
+

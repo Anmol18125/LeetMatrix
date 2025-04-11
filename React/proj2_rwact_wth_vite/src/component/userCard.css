@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+.user-container {
+    background-color: antiquewhite;
+    color: black;
+    gap: 1.5rem;
+    padding: 10px;
+    margin: 1rem;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Ensures consistent sizing */
+    width: 300px; /* Set a consistent width for all cards */
+    height: auto; /* Adjust height based on content */
+    max-width: 90%; /* Responsive adjustment for smaller screens */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    border-radius: 10px;
+}
+
+#user-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: aquamarine;
+}
+
+#user-disc {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    line-height: 1.5; /* Improved readability */
+    text-align: center;
+    max-width: 260px; /* Consistent width for the description */
+    word-wrap: break-word; /* Prevents long words from breaking the layout */
+    overflow: hidden; /* Hides extra text if it overflows */
+    text-overflow: ellipsis; /* Adds "..." for long overflowing text */
+}

@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.counter{
+    background-color: azure;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+
+}
+.btn{
+
+    display: flex;
+    flex-wrap: wrap;
+    background-color: red;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differences between XML and HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #e6f7ff;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background: #007bff;
+            color: #fff;
+        }
+        td {
+            background: #e6f7ff;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+        .marquee {
+            display: inline-block;
+            animation: slide 10s linear infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Differences between XML and HTML</h1>
+    <table>
+        <tr>
+            <th>XML</th>
+            <th>HTML</th>
+        </tr>
+        <tr>
+            <td>eXtensible Markup Language</td>
+            <td>HyperText Markup Language</td>
+        </tr>
+        <tr>
+            <td>Used to transport and store data</td>
+            <td>Used to display data</td>
+        </tr>
+        <tr>
+            <td>Strict syntax rules</td>
+            <td>More flexible syntax rules</td>
+        </tr>
+        <tr>
+            <td>Data is stored as plain text</td>
+            <td>Content is displayed as web pages</td>
+        </tr>
+        <tr>
+            <td>Tags are case-sensitive</td>
+            <td>Tags are not case-sensitive</td>
+        </tr>
+        <tr>
+            <td>Self-descriptive and extensible</td>
+            <td>Predefined set of tags</td>
+        </tr>
+        <tr>
+            <td>Allows nesting of tags in a strict manner</td>
+            <td>Allows nesting of tags in a flexible manner</td>
+        </tr>
+        <tr>
+            <td>Primarily used for data interchange</td>
+            <td>Primarily used for data presentation</td>
+        </tr>
+    </table>
+    <div class="footer">
+        <div class="marquee">sorry ma'am</div>
+    </div>
+</body>
+</html>

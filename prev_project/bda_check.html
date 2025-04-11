@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web-Based Statistical Graphics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+    svg {
+      margin-top: 20px;
+    }
+    .heading {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .subheading {
+      font-size: 18px;
+      color: gray;
+    }
+    .bar {
+      fill: #3498db;
+    }
+    .bar:hover {
+      fill: #1abc9c;
+    }
+    .label {
+      fill: black;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Anmol Ray</h1>
+  <h2 class="subheading">Software Engineer - Building Innovative Solutions</h2>
+
+  <h3 class="heading">Statistical Graphics: Bar Chart</h3>
+  <p>Visualizing Data from XML</p>
+  <svg id="barChart" width="600" height="400"></svg>
+
+  <script>
+    // Sample XML Data
+    const xmlData = `
+    <data>
+      <item>
+        <name>JavaScript</name>
+        <value>80</value>
+      </item>
+      <item>
+        <name>React</name>
+        <value>70</value>
+      </item>
+      <item>
+        <name>HTML</name>
+        <value>90</value>
+      </item>
+      <item>
+        <name>CSS</name>
+        <value>75</value>
+      </item>
+    </data>
+    `;
+
+    // Parse XML Data
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+    const items = xmlDoc.getElementsByTagName("item");
+
+    // SVG Dimensions
+    const svg = document.getElementById("barChart");
+    const svgWidth = svg.getAttribute("width");
+    const svgHeight = svg.getAttribute("height");
+    const barWidth = svgWidth / items.length;
+
+    // Create Bars from XML Data
+    Array.from(items).forEach((item, index) => {
+      const name = item.getElementsByTagName("name")[0].textContent;
+      const value = parseInt(item.getElementsByTagName("value")[0].textContent);
+
+      // Bar Height Scaling
+      const barHeight = (value / 100) * svgHeight * 0.8;
+
+      // Create Bar
+      const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      rect.setAttribute("x", index * barWidth);
+      rect.setAttribute("y", svgHeight - barHeight);
+      rect.setAttribute("width", barWidth * 0.8);
+      rect.setAttribute("height", barHeight);
+      rect.setAttribute("class", "bar");
+      svg.appendChild(rect);
+
+      // Add Labels
+      const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      label.setAttribute("x", index * barWidth + barWidth * 0.4);
+      label.setAttribute("y", svgHeight - barHeight - 5);
+      label.setAttribute("text-anchor", "middle");
+      label.setAttribute("class", "label");
+      label.textContent = value;
+      svg.appendChild(label);
+
+      const xLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      xLabel.setAttribute("x", index * barWidth + barWidth * 0.4);
+      xLabel.setAttribute("y", svgHeight - 5);
+      xLabel.setAttribute("text-anchor", "middle");
+      xLabel.setAttribute("class", "label");
+      xLabel.textContent = name;
+      svg.appendChild(xLabel);
+    });
+  </script>
+  <footer>
+    <p>Contact me: anmol18125@gmail.com | LinkedIn: <a href="#">LinkedIn</a> | GitHub: <a href="#">GitHub</a></p>
+    <p>©2025 Anmol All Rights Reserved</p>
+  </footer>
+</body>
+</html>

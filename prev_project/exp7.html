@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #e6f7ff;
+            color: #333;
+        }
+        nav {
+            background: linear-gradient(to right, #007bff, #00c6ff);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background: #007bff;
+            color: #fff;
+        }
+        td {
+            background: #e6f7ff;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+        .marquee {
+            display: inline-block;
+            animation: slide 10s linear infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        @media (max-width: 600px) {
+            table, th, td {
+                font-size: 12px;
+            }
+            .footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="#xml-vs-html">XML vs HTML</a>
+    <a href="#html-css-js">HTML, CSS, and JS</a>
+    <a href="#powerbi-tableau">Power BI and Tableau</a>
+    <a href="#custom-viz">Custom Visualizations</a>
+</nav>
+<h1>Data Visualization Information</h1>
+<h2 id="xml-vs-html">Difference between XML and HTML</h2>
+<form>
+    <table>
+        <tr>
+            <th>XML</th>
+            <th>HTML</th>
+        </tr>
+        <tr>
+            <td>eXtensible Markup Language</td>
+            <td>HyperText Markup Language</td>
+        </tr>
+        <tr>
+            <td>Used to transport and store data</td>
+            <td>Used to display data</td>
+        </tr>
+        <tr>
+            <td>Strict syntax rules</td>
+            <td>More flexible syntax rules</td>
+        </tr>
+    </table>
+    <div class="button-container">
+        <button type="button" onclick="location.href='read_more.html'">Read More</button>
+    </div>
+</form>
+<h2 id="html-css-js">Why HTML, CSS, and JS are required in data visualization</h2>
+<p>HTML structures the layout and organizes the content for visualization.</p>
+<p>CSS improves the visual appeal with colors, fonts, and responsive designs, making charts more attractive.</p>
+<p>JavaScript provides interactivity and animations, allowing users to dynamically interact with the data and perform real-time updates.</p>
+<ul>
+    <li>HTML: Structure</li>
+    <li>CSS: Design and Layout</li>
+    <li>JavaScript: Interaction and Data Manipulation</li>
+</ul>
+<h2 id="powerbi-tableau">When to use Power BI and Tableau</h2>
+<p>Power BI and Tableau are perfect for large datasets, business reports, and interactive dashboards without needing extensive coding knowledge.</p>
+<ul>
+    <li>Quick Data Analysis</li>
+    <li>Automated Reports</li>
+    <li>Business Intelligence</li>
+    <li>Collaboration and Sharing</li>
+</ul>
+<h2 id="custom-viz">When to use HTML, CSS, and JS for data visualization</h2>
+<p>Use HTML, CSS, and JS when customization, control, and embedding in web applications are required. These technologies allow for highly interactive, tailored visualizations.</p>
+<ul>
+    <li>Custom Visualization Design</li>
+    <li>Interactive Features</li>
+    <li>Web Application Integration</li>
+    <li>Open-Source Tools</li>
+</ul>
+
+<div class="footer">
+    <div class="marquee">sorry Dr.Bhupinder Kaur ma'am</div>
+</div>
+<script>
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button => {
+        button.addEventListener("click", () => alert("Button clicked!"));
+    });
+</script>
+</body>
+</html>

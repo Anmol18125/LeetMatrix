@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Watch</title>
+  <style>
+    body {
+      background-color: #10172a; /* Dark background */
+      color: #f8fafc; /* Light text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 40px;
+      background: #1c2331; /* Card background */
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1 1 auto;
+      background: #0f172a; /* Inner card background */
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .time {
+      font-size: 50px;
+      font-weight: bold;
+      color: #e2e8f0;
+    }
+
+    .date {
+      font-size: 24px;
+      font-weight: 500;
+      color: #cbd5e1;
+    }
+
+    .label {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .time {
+        font-size: 40px;
+      }
+
+      .date {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <div class="time" id="digital-clock">00:00:00</div>
+      <div class="label">Current Time</div>
+    </div>
+    <div class="card">
+      <div class="date" id="current-date">YYYY-MM-DD</div>
+      <div class="label">Today's Date</div>
+    </div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+
+      // Extract time
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let seconds = now.getSeconds();
+
+      // Pad single digits with a leading zero
+      hours = hours < 10 ? "0" + hours : hours;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      const currentTime = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('digital-clock').textContent = currentTime;
+
+      // Extract and format today's date
+      const year = now.getFullYear();
+      const month = (now.getMonth() + 1).toString().padStart(2, '0');
+      const day = now.getDate().toString().padStart(2, '0');
+      const currentDate = `${year}-${month}-${day}`;
+      document.getElementById('current-date').textContent = currentDate;
+    }
+
+    // Update the clock and date every second
+    setInterval(updateClock, 1000);
+
+    // Initial call to show clock and date immediately on load
+    updateClock();
+  </script>
+
+</body>
+</html>

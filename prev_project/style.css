@@ -1,0 +1,44 @@
+/* *{
+   padding: 0;
+   margin: 0;
+
+
+} */
+body{
+    font-family: verdana;
+}
+table{
+    border-collapse:collapse;
+  }
+tr td,th tr{
+  border:1px solid black;
+  background-color: #789342;
+}
+.bg-1 
+{
+    background-color: #e703c1;
+   padding: 20px 30px 20px 30px;
+    margin: 50px;
+}
+.bg-1 h1{
+    color: #789342;
+    text-align:center;
+    font-size: 60px;
+    
+
+
+}
+
+.bg-2
+{
+  background-image: linear-gradient(30deg,blue,red,green);
+  text-align: center;
+   padding: 100px 0px;
+
+}
+.bg-2 h1{
+  color: aquamarine;
+}
+h1{
+  color: #bbb;
+}

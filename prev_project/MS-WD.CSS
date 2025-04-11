@@ -1,0 +1,172 @@
+/* *{
+    background-color: brown;
+} */
+.bg-1 h3{
+    text-align: center;
+    color: orange;
+    font-family: italic;
+    font-size: 29px;
+    background-image: url("image/image\ 1.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0px;
+
+}
+.Container h2{
+  padding: 50px 100px;
+
+}
+.Container h2{
+
+    color: purple;
+    text-align: center;padding-bottom: 10px;
+}
+.content{
+    display: flex;
+}
+.content .Box{
+    width: 33.33%;
+    margin: 5px;
+    border: 1px solid rebeccapurple ;
+    border-radius: 10px;
+    overflow: hidden;
+    /* background-color: green; */
+}
+.content .Box:hover{
+border: none;
+box-shadow: 0px 3px 10px 0px red;
+}
+.content .Box:hover .bg-image img{
+   width: 110%;
+   
+}
+.bg-image
+{
+    height: 200px;
+    overflow: hidden;
+}
+
+.box-content{
+    padding: 10px;
+}
+.content .Box:hover .box-content h4{
+    color: blue;
+}
+.register{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* padding: 50px 100px; */
+margin: 2px 0px 0px 0px;
+
+}
+.link a{
+    color: red;
+    text-decoration: none;
+}
+.link a:visited{
+ color: aqua;/* check visited or not      */
+}
+.link a:active{
+    background-color: yellow;
+}
+
+.navbar{
+    background-color: black;
+    overflow: auto;
+    border-radius: 30px;
+    /* width: auto; */
+    /* overflow: hidden; */
+}
+
+.navbar li{
+    float: left;
+    list-style: none;
+ margin:  3px 18px;
+     padding-bottom: 5px;
+     /* width: auto; */
+}
+.navbar li a{
+    padding:3px 3px;
+    text-decoration: none; 
+    color: white;
+  
+    width: auto;
+}
+
+ .searchbox{
+    float: right;
+    padding: 5px 80px;
+    color: aqua;
+}
+
+.navbar input
+{
+    border: none; 
+    text-align: center;
+    padding: 3px;
+    border-radius: 20px;
+}
+
+.navbar input:hover
+{
+    border: 2px dashed red; 
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.register
+{
+    
+padding: 5px 10px;
+margin: 5px 0px 0px 0px;
+
+}
+
+.register h4
+{
+    color: blue;
+    text-align: center;
+    padding-bottom: 20px;
+    text-shadow: 0px 3px 10px red;
+}
+form{
+    
+    box-shadow:  0px 3px 10px 0px #c6c6c6;
+    border-radius:  20px;
+    overflow: hidden;
+    padding:   10px 10px;
+    align-items: center;
+    justify-content: center;
+    /* width: 40%; */
+    
+}
+form input{
+    width: fit-content;
+    outline: none;
+    border: none;
+   
+}
+form button{ 
+    color: blueviolet;
+    background-color: blanchedalmond;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0px 3px 10px 0px pink;
+    border-radius: 50px;
+    overflow: hidden;
+    
+}
+form button:hover{
+    box-shadow: none; cursor: pointer;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- <link rel="stylesheet" href="login.css"> -->
+</head>
+<body>
+
+    <div class="Signup"> 
+           <h1>Sign Up</h1>
+       <form action="#" name="submit-to-google-sheet">
+        <div class="icon">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+       
+        <input type="text" class="Input" name="name" placeholder="Username" required>
+        <br>
+       
+        <br>
+        <input type="Email" name="E-Mail" class="Input" placeholder=" E-Mail" required>
+        <br>
+        <br>
+       
+       
+        <input type="Number" name=" tel " class="Input" placeholder="Phone Number" required>
+<br>
+<br>
+
+
+        <input type="Password" name="Password" class="Input" placeholder="Password">
+        <br>
+        <br>
+        <input type="city" name="city" class="Input" placeholder="CITY">
+<br>
+        <br>
+
+        <input type="state" name="state" class="Input"placeholder='State'>
+        <br>
+
+<br>
+        <input type="Addresh" name="address" class="Input" placeholder="Adress">
+        <br>
+        <input type="Radio" name="Gender">Male
+        <input type="Radio" name="Gender">Female
+        <input type="Radio" name="Gender">Other<br>
+        <br>
+        <button type="checkbox" class="Check"><input type="checkbox"> I agree all term & condition</button>
+<br><br>
+<button class="btn">Submit</button><br>
+<span id="Success" > </span>
+<br><br>
+<h5>Already a Member <a href="Login.html">Login</a></h5>
+
+
+
+       </form>
+
+
+      
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzYLhUdSyBX2jNypVU6bQ0SHFJZszZp4EYHyXhqiXLGijOVBQb2dFc80D6avxYVLwKa5w/exec'
+        const form = document.forms['submit-to-google-sheet']
+      const Success=document.getElementById('Success');
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>{
+Success.innerHTML="Data Submitted Successfully";
+setTimeout(function(){
+    Success.innerHTML=" ";
+},5000) 
+form.reset();
+            }                )
+           
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    
+</body>
+</html>

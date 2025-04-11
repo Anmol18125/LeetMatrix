@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Container {
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    flex-wrap: wrap;
+  }
+  
+  ul {
+    display: flex;
+    justify-content: space-between;
+padding-right: 25px;
+gap: 20px;
+background-color: beige;
+    list-style: none; /* Removes bullets */
+  }
+  
+ .active-link{
+    /* background-color: black; */
+    border: 2px solid black;
+ }
+  
+  
